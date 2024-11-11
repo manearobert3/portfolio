@@ -1,21 +1,20 @@
-// app/layout.tsx
-import {Providers} from './providers'
+import Header from "./components/header";
+import { Providers } from "./components/providers";
+import "./globals.css";
+
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className="min-h-screen transition-colors duration-300">
+    <html lang="en" suppressHydrationWarning>
+      <body className="flex min-h-screen flex-col antialiased">
         <Providers>
-          <div className="min-h-screen bg-base-100">
-            <main className="container mx-auto px-4">
-              {children}
-            </main>
-          </div>
+          <Header />
+          <main className="grow">{children}</main>
         </Providers>
       </body>
     </html>
-  )
+  );
 }
