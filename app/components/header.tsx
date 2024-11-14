@@ -3,7 +3,7 @@ import ThemeToggle from "./theme-toggle";
 
 export default function Header() {
   return (
-    <div className="navbar bg-base-100 dark:bg-slate-50 sticky top-0 z-50">
+    <div className="navbar  sticky top-0 z-50 backdrop-blur-lg">
       <div className="container max-w-3xl mx-auto flex items-center justify-between h-full">
         <div className="flex-none">
           <button className="btn btn-square btn-ghost">

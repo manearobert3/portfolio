@@ -15,9 +15,9 @@ export default function Intro() {
         <Image
           src={myImage}
           alt="Picture of the author"
-          width={700}
-          height={500}
-          className="rounded-full"
+          width={500}
+          height={400}
+          className="rounded-3xl" // Use "rounded-lg" for smoother edges
           priority
         />
       </div>
