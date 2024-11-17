@@ -23,7 +23,7 @@ export default function Projects({
                     project.tags.map((tag: string) => (
                       <div
                         key={tag}
-                        className="badge badge-outline dark:badge-fill"
+                        className="badge badge-outline dark:badge-fill "
                       >
                         {tag}
                       </div>

@@ -1,5 +1,6 @@
 import React from "react";
 import ThemeToggle from "./theme-toggle";
+import Link from "next/link";
 
 export default function Header() {
   return (
@@ -23,7 +24,15 @@ export default function Header() {
           </button>
         </div>
         <div className="flex-1 text-center">
-          <a className="btn btn-ghost text-xl">Links here</a>
+          <Link className="btn btn-ghost text-xl" href="/">
+            Main
+          </Link>
+          <Link className="btn btn-ghost text-xl" href="/projects">
+            Projects
+          </Link>
+          <Link className="btn btn-ghost text-xl" href="/contact">
+            Contact
+          </Link>
         </div>
         <div className="flex-none">
           <ThemeToggle />
