@@ -1,16 +1,17 @@
 import React from "react";
-import Image from "next/image";
+import { roboto_mono } from "../layout";
+
 export default function Timeline() {
   return (
     <>
-      <ul className="timeline timeline-snap-icon max-md:timeline-compact timeline-vertical bg-transparent border border-slate-300 rounded-lg p-4">
-        <li>
-          <div className="timeline-middle timeline-item max-w-screen-2xl">
+      <ul className="timeline bg-stone-100 dark:bg-inherit timeline-snap-icon max-md:timeline-compact timeline-vertical border dark:border-slate-700 border-slate-300 rounded-2xl p-4">
+        <li className="mb-6">
+          <div className="timeline-middle col-start-1 ml-4 md:ml-13 max-w-screen-2xl">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 20 20"
               fill="currentColor"
-              className="h-5 w-5"
+              className="h-5 w-5 ml-9 md:ml-0"
             >
               <path
                 fillRule="evenodd"
@@ -20,44 +21,57 @@ export default function Timeline() {
             </svg>
           </div>
 
-          <div className="timeline-start timeline-start-override ml-10 md:text-start">
-            <time className="font-mono italic">Jul 2024 - Aug 2024</time>
-            <div className="text-lg font-black">MHP - a Porsche Company</div>
-            <div className="font-mono italic">Software Developer (Intern)</div>▪
-            Collaborated in a team of 5 to develop a full-stack web application
-            for agile project management, featuring a planning and estimation
-            game that helps teams effectively manage tasks and stories. The
-            application included comprehensive CRUD operations, real-time game
-            functionality using Web Sockets, and an attractive, user-friendly
-            design.
-            <div>
-              ▪ Gained experience working with various programming languages,
-              libraries, and frameworks, including Java, Spring Boot, Liquibase,
-              TypeScript, CSS, HTML, Ant Design, Redux Toolkit and React.
+          <div className="timeline-start pl-12 timeline-start-override ml-4 md:ml-10 md:text-start">
+            <time
+              className={`${roboto_mono.className} italic text-gray-600 dark:text-gray-400`}
+            >
+              Jul 2024 - Aug 2024
+            </time>
+            <div className="text-lg font-semibold">MHP - a Porsche Company</div>
+            <div
+              className={`${roboto_mono.className} italic text-gray-600 dark:text-gray-400`}
+            >
+              Software Developer (Intern)
             </div>
-            <div>
-              ▪ Engaged in comprehensive training sessions covering front-end
-              development, back-end architecture, and security best practices.
-            </div>
-            <div>
-              ▪ Contributed to code reviews, troubleshooting, and iterative
-              development in a collaborative, agile environment, actively
-              participating in daily stand-ups, sprint planning, and team
-              meetings to ensure high-quality deliverables.
-            </div>
+            <ul className="list-disc list-with-margin pl-5 pt-2">
+              <li className="mb-2">
+                Collaborated in a team of 5 to develop a full-stack web
+                application for agile project management, featuring a planning
+                and estimation game that helps teams effectively manage tasks
+                and stories. The application included comprehensive CRUD
+                operations, real-time game functionality using Web Sockets, and
+                an attractive, user-friendly design.
+              </li>
+              <li className="mb-2">
+                Gained experience working with various programming languages,
+                libraries, and frameworks, including Java, Spring Boot,
+                Liquibase, TypeScript, CSS, HTML, Ant Design, Redux Toolkit and
+                React.
+              </li>
+              <li className="mb-2">
+                Engaged in comprehensive training sessions covering front-end
+                development, back-end architecture, and security best practices.
+              </li>
+              <li className="mb-2">
+                Contributed to code reviews, troubleshooting, and iterative
+                development in a collaborative, agile environment, actively
+                participating in daily stand-ups, sprint planning, and team
+                meetings to ensure high-quality deliverables.
+              </li>
+            </ul>
           </div>
-          <hr />
+          <hr className="dark:bg-slate-300 bg-black" />
         </li>
       </ul>
-      <br></br>
-      <ul className="timeline timeline-snap-icon max-md:timeline-compact timeline-vertical bg-transparent border border-slate-300 rounded-lg p-4">
-        <li>
-          <div className="timeline-middle timeline-item max-w-screen-2xl">
+      <br />
+      <ul className="timeline bg-stone-100 dark:bg-inherit timeline-snap-icon max-md:timeline-compact timeline-vertical border dark:border-slate-700 border-slate-300 rounded-2xl p-4">
+        <li className="mb-6">
+          <div className="timeline-middle col-start-1 ml-4 md:ml-13 max-w-screen-2xl">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 20 20"
               fill="currentColor"
-              className="h-5 w-5"
+              className="h-5 w-5 ml-9 md:ml-0"
             >
               <path
                 fillRule="evenodd"
@@ -67,21 +81,31 @@ export default function Timeline() {
             </svg>
           </div>
 
-          <div className="timeline-start timeline-start-override ml-10 md:text-start">
-            <time className="font-mono italic">Oct 2022 - Jul 2025</time>
-            <div className="text-lg font-black">Babeș-Bolyai University</div>
-            <div className="font-mono italic">
+          <div className="timeline-start pl-12 timeline-start-override ml-4 md:ml-10 md:text-start">
+            <time
+              className={`${roboto_mono.className} italic text-gray-600 dark:text-gray-400`}
+            >
+              Oct 2022 - Jul 2025
+            </time>
+            <div className="text-lg font-semibold">Babeș-Bolyai University</div>
+            <div
+              className={`${roboto_mono.className} italic text-gray-600 dark:text-gray-400`}
+            >
               Bachelor's in Computer Science
             </div>
-            <div>▪ Language of study: English</div>
-            <div>▪ My second-year grade was 9.9 equivalent to GPA: 4</div>
-            <div>
-              ▪ Relevant Courses: Computer System Architecture, Object Oriented
-              Programming, Data Structures and Algorithms, Algebra, Databases,
-              Web Development, Computer Networks
-            </div>
+            <ul className="list-disc list-with-margin pl-5 pt-2">
+              <li className="mb-2">Language of study: English</li>
+              <li className="mb-2">
+                My second-year grade was 9.9 equivalent to GPA: 4
+              </li>
+              <li className="mb-2">
+                Relevant Courses: Computer System Architecture, Object Oriented
+                Programming, Data Structures and Algorithms, Algebra, Databases,
+                Web Development, Computer Networks
+              </li>
+            </ul>
           </div>
-          <hr />
+          <hr className="dark:bg-slate-300 bg-black" />
         </li>
       </ul>
     </>

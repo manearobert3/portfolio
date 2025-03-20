@@ -10,11 +10,11 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #ededed;
-    --foreground: #0a0a0a;
+    --foreground: oklch(0.129 0.042 264.695);
   }
 
   .dark {
-    --background: #0a0a0a;
+    --background: oklch(0.129 0.042 264.695);
     --foreground: #ededed;
   }
 }
@@ -72,6 +72,10 @@
   margin-left: 1rem;
 }
 
+.list-with-margin li {
+  margin-bottom: 0.5rem;
+}
+
 body {
   color: var(--foreground);
   background: var(--background);
@@ -83,4 +87,10 @@ body {
 
 .font-display {
   font-family: var(--font-playfair);
+}
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  transition: background-color 5000s ease-in-out 0s;
 }

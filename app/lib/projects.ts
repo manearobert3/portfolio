@@ -14,6 +14,9 @@ export type ProjectMetadata = {
   date: string;
   tags: string[];
   slug: string;
+  github: string;
+  demo: string;
+  url: string;
 };
 
 export async function getProjects(limit?: number): Promise<ProjectMetadata[]> {
@@ -47,6 +50,9 @@ export function exportProjectMetadata(filepath: string): ProjectMetadata {
     date: data.date,
     tags: data.tags,
     slug,
+    github: data.github,
+    demo: data.demo,
+    url: data.url,
   };
 }
 

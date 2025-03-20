@@ -1,20 +1,21 @@
+import "./globals.css";
+
 import Header from "./components/header";
 import { Providers } from "./components/providers";
-import "./globals.css";
 import { Inter, Playfair_Display, Roboto } from "next/font/google";
 
-const inter = Inter({
+export const inter = Inter({
   subsets: ["latin"],
   display: "swap",
 });
 
-const roboto_mono = Roboto({
+export const roboto_mono = Roboto({
   subsets: ["latin"],
   display: "swap",
-  weight: "100",
+  weight: "700",
 });
 
-const playfair = Playfair_Display({
+export const playfair = Playfair_Display({
   subsets: ["latin"],
   display: "swap",
 });

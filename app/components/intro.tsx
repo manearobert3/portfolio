@@ -1,13 +1,19 @@
+"use client";
+
 import Image from "next/image";
-import myImage from "../../public/images/avatar.jpg";
+import myImage from "../../public/images/avatarv3.jpg";
 import {
   FaGithub,
   FaLinkedin,
   FaFilePdf,
   FaMapMarkerAlt,
 } from "react-icons/fa";
+import { SiGmail } from "react-icons/si";
 
 export default function Intro() {
+  const copyToClipboard = (text: string) => {
+    navigator.clipboard.writeText(text);
+  };
   return (
     <div>
       <div className="flex items-left">
@@ -28,7 +34,7 @@ export default function Intro() {
               href="https://github.com/manearobert3"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-500 hover:text-black"
+              className="text-gray-500 dark:text-gray-100 dark:hover:text-gray-500 hover:text-black"
             >
               <FaGithub className="h-6 w-6" />
             </a>
@@ -36,15 +42,22 @@ export default function Intro() {
               href="https://www.linkedin.com/in/robert-petrisor-manea"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-500 hover:text-blue-600"
+              className="text-gray-500 dark:text-gray-100 dark:hover:text-blue-600 hover:text-blue-600 "
             >
               <FaLinkedin className="h-6 w-6" />
+            </a>
+            <a
+              href="#"
+              onClick={() => copyToClipboard("manea.robert.petrisor@gmail.com")}
+              className="text-gray-500 dark:text-gray-100 dark:hover:text-yellow-600 hover:text-yellow-600 "
+            >
+              <SiGmail className="h-6 w-6" />
             </a>
             <a
               href="/files/resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center text-gray-500 hover:text-red-600"
+              className="flex items-center text-gray-500 dark:text-gray-100 dark:hover:text-red-600 hover:text-red-600"
             >
               <FaFilePdf className="h-6 w-6 mr-1" />
               <span className="text-sm">Resume</span>

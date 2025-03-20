@@ -1,17 +1,28 @@
-import { getProjectBySlug } from "@/app/lib/projects";
+import { getProjectBySlug, getProjects } from "@/app/lib/projects";
 import React from "react";
 import "tailwindcss/tailwind.css";
+import "../../globals.css";
 import { MDXRemote } from "next-mdx-remote/rsc";
+import { notFound } from "next/navigation";
+
+export async function generateStaticParams() {
+  const projects = await getProjects();
+  const slugs = projects.map((project) => ({
+    slug: project.slug,
+  }));
+  return slugs;
+}
 
 export default async function Project({
-  params: { slug },
+  params,
 }: {
   params: { slug: string };
 }) {
+  const { slug } = await params;
   const project = await getProjectBySlug(slug);
 
   if (!project) {
-    return <div>Post not found</div>;
+    notFound();
   }
 
   const { metadata, content } = project;
