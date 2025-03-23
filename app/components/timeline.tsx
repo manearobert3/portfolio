@@ -1,5 +1,5 @@
 import React from "react";
-import { roboto_mono } from "../layout";
+import { roboto_mono } from "../fonts/fonts";
 
 export default function Timeline() {
   return (

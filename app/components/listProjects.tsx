@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { ProjectMetadata } from "../lib/projects";
-import { roboto_mono } from "../layout";
+import { roboto_mono } from "../fonts/fonts";
 import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
 export default function ListProjects({
   projects,

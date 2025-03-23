@@ -1,25 +1,8 @@
 import "./globals.css";
-
 import Header from "./components/header";
-import { Providers } from "./components/providers";
-import { Inter, Playfair_Display, Roboto } from "next/font/google";
 import Footer from "./components/footer";
-
-export const inter = Inter({
-  subsets: ["latin"],
-  display: "swap",
-});
-
-export const roboto_mono = Roboto({
-  subsets: ["latin"],
-  display: "swap",
-  weight: "700",
-});
-
-export const playfair = Playfair_Display({
-  subsets: ["latin"],
-  display: "swap",
-});
+import { Providers } from "./components/providers";
+import { inter } from "./fonts/fonts";
 
 export default function RootLayout({
   children,
