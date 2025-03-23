@@ -19,10 +19,11 @@ export default function Intro() {
       <div className="flex flex-col-reverse md:flex-row items-center">
         {" "}
         <section className="p-6 md:w-11/12 ">
-          <h1 className="text-4xl font-bold mb-4">Hi! I'm Robert</h1>
+          <h1 className="text-4xl font-bold mb-4">Hi! I&apos;m Robert</h1>
           <p className="text-lg">
             Aspiring software engineer, currently in my third year of pursuing a
-            bachelor's degree in Computer Science at Babeș-Bolyai University.
+            bachelor&apos;s degree in Computer Science at Babeș-Bolyai
+            University.
           </p>
           <div className="flex items-center mt-4">
             <FaMapMarkerAlt className="text-2xl mr-2 text-black dark:text-white" />

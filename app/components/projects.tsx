@@ -1,7 +1,6 @@
 "use client";
 import React from "react";
 import { ProjectMetadata } from "../lib/projects";
-import { useRouter } from "next/navigation";
 import { roboto_mono } from "../layout";
 import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
 export default function Projects({
@@ -9,8 +8,6 @@ export default function Projects({
 }: {
   projects: ProjectMetadata[];
 }) {
-  const router = useRouter();
-
   return (
     <>
       <article className="prose">

@@ -92,7 +92,7 @@ export default function Timeline() {
             <div
               className={`${roboto_mono.className} italic text-gray-600 dark:text-gray-400`}
             >
-              Bachelor's in Computer Science
+              Bachelor&apos;s in Computer Science
             </div>
             <ul className="list-disc list-with-margin pl-5 pt-2">
               <li className="mb-2">Language of study: English</li>
