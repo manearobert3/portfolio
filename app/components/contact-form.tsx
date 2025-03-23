@@ -6,7 +6,7 @@ import { AiOutlineUser, AiOutlineMail } from "react-icons/ai";
 import { contactSchema } from "../lib/schema";
 import { z } from "zod";
 import { sendEmail } from "../lib/actions";
-
+import { IoSend } from "react-icons/io5";
 type Inputs = z.infer<typeof contactSchema>;
 
 export default function ContactForm() {
@@ -32,6 +32,7 @@ export default function ContactForm() {
     const response = await sendEmail(data);
     if (response.error) {
       setShowEmailAlert(true);
+      console.log(response.error);
       setTimeout(() => {
         setShowEmailAlert(false);
       }, 3000);
@@ -65,10 +66,10 @@ export default function ContactForm() {
       <h1 className="ml-2 mb-2 text-3xl font-bold">Get in touch:</h1>
 
       <form className="grid " onSubmit={handleSubmit(processForm)}>
-        <div className="grid grid-cols-2 p-2 gap-[1vw] h-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 p-2 gap-[1vw] h-auto mb-4 md:mb-0">
           <div className="grid grid-rows">
             <label
-              className={`bg-slate-300 dark:bg-gray-800 input w-full focus-within:outline-gray-600 dark:focus-within:outline-gray-400 h-12 ${
+              className={`bg-stone-100 border-slate-400 dark:bg-gray-800 input w-full focus-within:outline-gray-600 dark:focus-within:outline-gray-400 h-12 ${
                 errors.name
                   ? "focus-within:outline-red-500 dark:focus-within:outline-red-500 border-red-500 dark:border-red-500"
                   : "focus-within:outline-gray-600 dark:focus-within:outline-gray-400"
@@ -83,7 +84,6 @@ export default function ContactForm() {
                 />
               </div>
             </label>
-            {/* Error message with fixed height */}
             <p
               className={`text-red-700 ml-2 mt-2 transition-all duration-200 ${
                 errors.name
@@ -97,7 +97,7 @@ export default function ContactForm() {
 
           <div className="grid grid-rows">
             <label
-              className={`bg-slate-300 dark:bg-gray-800 input w-full focus-within:outline-gray-600 dark:focus-within:outline-gray-400 h-12 ${
+              className={`bg-stone-100 border-slate-400 dark:bg-gray-800 input w-full focus-within:outline-gray-600 dark:focus-within:outline-gray-400 h-12 ${
                 errors.email
                   ? "focus-within:outline-red-500 dark:focus-within:outline-red-500 border-red-500 dark:border-red-500"
                   : "focus-within:outline-gray-600 dark:focus-within:outline-gray-400"
@@ -127,7 +127,7 @@ export default function ContactForm() {
         </div>
         <div className="p-2">
           <textarea
-            className={`bg-slate-300 dark:bg-gray-800 input w-full h-24 p-3 ${
+            className={`bg-stone-100 border-slate-400 dark:bg-gray-800 input w-full h-24 p-3 resize-none ${
               errors.message
                 ? "border-red-500 dark:border-red-500 focus-within:outline-red-500 dark:focus-within:outline-red-500"
                 : "focus-within:outline-gray-600 dark:focus-within:outline-gray-400"
@@ -141,14 +141,27 @@ export default function ContactForm() {
           )}
           <div className="flex justify-end ">
             <button
-              className="btn bg-slate-300 dark:bg-gray-800  btn-lg md:btn-md w-1/5 mt-3"
               type="submit"
               disabled={isSubmitting}
+              className="btn btn-lg md:btn-md w-full md:w-full mt-6 mb-4
+    bg-slate-900 border-slate-400 hover:bg-slate-700 text-slate-200
+    dark:border-inherit dark:border-slate-400 hover:border-slate-400 hover:text-slate-200
+    dark:text-slate-900 dark:bg-slate-300 dark:hover:bg-slate-800 dark:hover:text-slate-200 border-none dark:border-none 
+    disabled:bg-gray-400 disabled:text-slate-200 disabled:cursor-not-allowed"
             >
-              {isSubmitting ? "Submitting..." : "Submit"}
+              <IoSend />
+              {isSubmitting ? "Sending..." : "Send"}
             </button>
           </div>
-          <p>By submitting this form you agree with the privacy</p>
+          <p className="ml-2 text-gray-600 dark:text-gray-400 text-sm">
+            By submitting this form you agree with the{" "}
+            <a
+              href="/privacy"
+              className="text-blue-600 dark:text-blue-400 underline"
+            >
+              privacy
+            </a>
+          </p>
         </div>
       </form>
     </>

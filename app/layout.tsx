@@ -3,6 +3,7 @@ import "./globals.css";
 import Header from "./components/header";
 import { Providers } from "./components/providers";
 import { Inter, Playfair_Display, Roboto } from "next/font/google";
+import Footer from "./components/footer";
 
 export const inter = Inter({
   subsets: ["latin"],
@@ -33,6 +34,7 @@ export default function RootLayout({
         <Providers>
           <Header />
           <main className="grow">{children}</main>
+          <Footer />
         </Providers>
       </body>
     </html>

@@ -1,8 +1,9 @@
 "use client";
 import React from "react";
 import { ProjectMetadata } from "../lib/projects";
-import { useRouter } from "next/navigation";
-import { roboto_mono, inter } from "../layout";
+import { redirect, useRouter } from "next/navigation";
+import { roboto_mono } from "../layout";
+import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
 export default function ListProjects({
   projects,
 }: {
@@ -24,11 +25,11 @@ export default function ListProjects({
             return (
               <li key={project.slug} className="min-h-32">
                 <div className="card rounded-xl border border-slate-300 dark:border-slate-950 dark:bg-slate-900 min-h-full bg-gray-50 mb-4 transition-transform transform hover:-translate-y-1 ">
-                  <figure className="relative w-full h-48 overflow-hidden bg-gray-200 rounded-t-xl">
+                  <figure className="relative w-full h-48 overflow-hidden rounded-t-xl">
                     <img
                       src={project.image}
                       alt={project.title}
-                      className="absolute inset-0 w-full h-full object-cover"
+                      className="absolute pt-2 pl-2 pr-2 w-full h-full object-cover rounded-tl-xl rounded-tr-xl"
                       loading="lazy"
                     />
                   </figure>
@@ -48,26 +49,33 @@ export default function ListProjects({
                           </div>
                         ))}
                     </div>
-                    <div className="mt-4">
+                    <div className="mt-4 gap-4 flex flex-wrap">
                       {project.github && (
-                        <a
-                          href={project.github}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-blue-500 hover:underline text-sm"
+                        <button
+                          className="btn btn-neutral btn-sm text-sm text-slate-600 border-slate-300 bg-slate-100 hover:bg-slate-600 hover:text-slate-300 dark:bg-slate-700 dark:border-slate-600 dark:text-slate-300 dark:hover:bg-slate-500"
+                          onClick={() => window.open(project.github, "_blank")}
                         >
+                          <FaGithub className="h-5 w-5" />
                           GitHub
-                        </a>
+                        </button>
+                      )}
+                      {project.url && (
+                        <button
+                          className="btn btn-neutral btn-sm text-sm text-slate-600 border-slate-300 bg-slate-100 hover:bg-slate-600 hover:text-slate-300 dark:bg-slate-700 dark:border-slate-600 dark:text-slate-300 dark:hover:bg-slate-500"
+                          onClick={() => window.open(project.url, "_blank")}
+                        >
+                          <FaExternalLinkAlt className="h-4 w-4" />
+                          Link
+                        </button>
                       )}
                       {project.demo && (
-                        <a
-                          href={project.demo}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="ml-4 text-blue-500 hover:underline text-sm"
+                        <button
+                          className="btn btn-neutral btn-sm text-sm text-slate-600 border-slate-300 bg-slate-100 hover:bg-slate-600 hover:text-slate-300 dark:bg-slate-700 dark:border-slate-600 dark:text-slate-300 dark:hover:bg-slate-500"
+                          onClick={() => window.open(project.demo, "_blank")}
                         >
-                          Live Demo
-                        </a>
+                          <FaExternalLinkAlt className="h-4 w-4" />
+                          Explore
+                        </button>
                       )}
                     </div>
                   </div>

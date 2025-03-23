@@ -16,20 +16,12 @@ export async function sendEmail(data: Inputs) {
   try {
     const { name, email, message } = result.data;
     const { data, error } = await resend.emails.send({
-      from: "manea.robert.petrisor@gmail.com",
+      from: `Robert Manea <contact@manearobert.dev>`,
       to: [email],
       cc: ["manea.robert.petrisor@gmail.com"],
       subject: "Contact form submission",
       text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`,
       react: ContactFormEmail({ name, email, message }),
-    });
-
-    const response = await fetch("/api/contact", {
-      method: "POST",
-      headers: {
-        "Content-type": "application/json",
-      },
-      body: JSON.stringify(data),
     });
 
     if (!data || error) {

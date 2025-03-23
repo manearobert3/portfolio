@@ -5,7 +5,7 @@ import ListProjects from "./components/listProjects";
 import { getProjects } from "./lib/projects";
 
 const Home = async () => {
-  const projects = await getProjects(3);
+  const projects = await getProjects();
   return (
     <section className="py-7">
       <div className="container max-w-3xl mx-auto flex flex-col h-full">

@@ -17,6 +17,7 @@ export type ProjectMetadata = {
   github: string;
   demo: string;
   url: string;
+  priority: number;
 };
 
 export async function getProjects(limit?: number): Promise<ProjectMetadata[]> {
@@ -25,6 +26,19 @@ export async function getProjects(limit?: number): Promise<ProjectMetadata[]> {
   const projects = filenames
     .map((filename) => exportProjectMetadata(filename))
     .sort((x: ProjectMetadata, y: ProjectMetadata) => {
+      const priorityA = x.priority ?? 0;
+      const priorityB = y.priority ?? 0;
+      if (priorityA !== priorityB) {
+        if (priorityA === 0) {
+          return 1;
+        }
+        if (priorityB === 0) {
+          return -1;
+        }
+
+        return priorityB - priorityA;
+      }
+
       if (x.date < y.date) {
         return 1;
       } else {
@@ -53,6 +67,7 @@ export function exportProjectMetadata(filepath: string): ProjectMetadata {
     github: data.github,
     demo: data.demo,
     url: data.url,
+    priority: data.priority,
   };
 }
 
@@ -71,6 +86,10 @@ export async function getProjectBySlug(slug: string): Promise<Project | null> {
         date: data.date,
         tags: data.tags,
         slug,
+        github: data.github,
+        demo: data.demo,
+        url: data.url,
+        priority: data.priority,
       },
       content,
     };

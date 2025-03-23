@@ -4,7 +4,8 @@ import { roboto_mono } from "../layout";
 export default function Timeline() {
   return (
     <>
-      <ul className="timeline bg-stone-100 dark:bg-inherit timeline-snap-icon max-md:timeline-compact timeline-vertical border dark:border-slate-700 border-slate-300 rounded-2xl p-4">
+      <p className="text-3xl font-bold ml-7">Experience & Education</p>
+      <ul className="timeline m-4 mt-6 mb-0 bg-stone-100 dark:bg-inherit timeline-snap-icon max-md:timeline-compact timeline-vertical border dark:border-slate-700 border-slate-300 rounded-2xl p-4">
         <li className="mb-6">
           <div className="timeline-middle col-start-1 ml-4 md:ml-13 max-w-screen-2xl">
             <svg
@@ -21,7 +22,7 @@ export default function Timeline() {
             </svg>
           </div>
 
-          <div className="timeline-start pl-12 timeline-start-override ml-4 md:ml-10 md:text-start">
+          <div className="timeline-start md:pl-6 pl-12 timeline-start-override ml-4 md:ml-10 md:text-start">
             <time
               className={`${roboto_mono.className} italic text-gray-600 dark:text-gray-400`}
             >
@@ -64,7 +65,7 @@ export default function Timeline() {
         </li>
       </ul>
       <br />
-      <ul className="timeline bg-stone-100 dark:bg-inherit timeline-snap-icon max-md:timeline-compact timeline-vertical border dark:border-slate-700 border-slate-300 rounded-2xl p-4">
+      <ul className="timeline m-4 mt-0 bg-stone-100 dark:bg-inherit timeline-snap-icon max-md:timeline-compact timeline-vertical border dark:border-slate-700 border-slate-300 rounded-2xl p-4">
         <li className="mb-6">
           <div className="timeline-middle col-start-1 ml-4 md:ml-13 max-w-screen-2xl">
             <svg
@@ -81,7 +82,7 @@ export default function Timeline() {
             </svg>
           </div>
 
-          <div className="timeline-start pl-12 timeline-start-override ml-4 md:ml-10 md:text-start">
+          <div className="timeline-start md:pl-6 pl-12 timeline-start-override ml-4 md:ml-10 md:text-start">
             <time
               className={`${roboto_mono.className} italic text-gray-600 dark:text-gray-400`}
             >
