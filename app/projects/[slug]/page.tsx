@@ -12,17 +12,18 @@ export async function generateStaticParams() {
   }));
   return slugs;
 }
+type Props = {
+  params: {
+    slug: string;
+  };
+};
 
-export default async function Project({
-  params,
-}: {
-  params: { slug: string };
-}) {
+export default async function Project({ params }: Props) {
   const { slug } = params;
   const project = await getProjectBySlug(slug);
 
   if (!project) {
-    notFound();
+    return notFound();
   }
 
   const { metadata, content } = project;
