@@ -18,7 +18,7 @@ export default async function Project({
 }: {
   params: { slug: string };
 }) {
-  const { slug } = await params;
+  const { slug } = params;
   const project = await getProjectBySlug(slug);
 
   if (!project) {
